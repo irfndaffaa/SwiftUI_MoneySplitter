@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WelcomePage: View {
+    
     var body: some View {
         VStack{
             Image("welcomeImg")
@@ -50,7 +51,12 @@ struct WelcomePage: View {
                             .background(Color.white)
                             .cornerRadius(20)
                             .shadow(color: Color("darkShadow"), radius: 4, x: 1, y: 2)
-                    }.navigationBarHidden(true)
+                    }
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.black, lineWidth: 1)
+                        )
+                    .navigationBarHidden(true)
                 }
             }
             .padding(.top,34)

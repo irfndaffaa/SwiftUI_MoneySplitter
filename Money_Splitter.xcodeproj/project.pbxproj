@@ -40,6 +40,7 @@
 		0F376F3225636CEA00A5FA8A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F376F3125636CEA00A5FA8A /* HomeView.swift */; };
 		0F376F3B25651E7300A5FA8A /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F376F3A25651E7300A5FA8A /* TabButton.swift */; };
 		0F376F402565220800A5FA8A /* tab_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F376F3F2565220800A5FA8A /* tab_model.swift */; };
+		0F376F4B256942F000A5FA8A /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F376F4A256942EF00A5FA8A /* FloatingButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		0F376F3125636CEA00A5FA8A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0F376F3A25651E7300A5FA8A /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		0F376F3F2565220800A5FA8A /* tab_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tab_model.swift; sourceTree = "<group>"; };
+		0F376F4A256942EF00A5FA8A /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				0F376F232563061700A5FA8A /* RegisterView.swift */,
 				0F376F3125636CEA00A5FA8A /* HomeView.swift */,
 				0F376F3A25651E7300A5FA8A /* TabButton.swift */,
+				0F376F4A256942EF00A5FA8A /* FloatingButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				0F376F402565220800A5FA8A /* tab_model.swift in Sources */,
 				0F376F3B25651E7300A5FA8A /* TabButton.swift in Sources */,
 				0F376EBA2562CD6800A5FA8A /* SceneDelegate.swift in Sources */,
+				0F376F4B256942F000A5FA8A /* FloatingButtonView.swift in Sources */,
 				0F376EBC2562CD6800A5FA8A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

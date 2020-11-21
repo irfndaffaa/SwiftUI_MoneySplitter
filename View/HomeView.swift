@@ -38,89 +38,89 @@ struct HomeView: View {
                     .padding([.bottom,.trailing], 10)
                     .padding(.top,25)
                     
+                    HStack{
+                        VStack(alignment: .leading){
+                            Text("Available Cash")
+                                .font(Font.custom("Poppins-Light", size: 13))
+                                .foregroundColor(.black)
+                            
+                            Text("Rp 10.000.000")
+                                .font(Font.custom("Poppins-SemiBold", size: 22))
+                                .foregroundColor(.black)
+                        }
+                        
+                        Spacer(minLength: 0)
+                        
+                        VStack{
+                            HStack(alignment: .center){
+                                Image("wallet")
+                                    .resizable()
+                                    .frame(width: 21, height: 18)
+                            }
+                            .padding(7)
+                            .background(Color("Secondary"))
+                            .cornerRadius(13)
+                            
+                            Text("Wallet")
+                                .font(Font.custom("Poppins-Light", size: 10))
+                                .foregroundColor(.black)
+                        }
+                        
+                        VStack{
+                            HStack(alignment: .center){
+                                Image("bar-chart-2")
+                                    .resizable()
+                                    .frame(width: 21, height: 18)
+                            }
+                            .padding(7)
+                            .background(Color("Secondary"))
+                            .cornerRadius(13)
+                            
+                            Text("Budget")
+                                .font(Font.custom("Poppins-Light", size: 10))
+                                .foregroundColor(.black)
+                        }
+                        
+                        VStack{
+                            HStack(alignment: .center){
+                                Image("trending-up")
+                                    .resizable()
+                                    .frame(width: 21, height: 18)
+                            }
+                            .padding(7)
+                            .background(Color("Secondary"))
+                            .cornerRadius(13)
+                            
+                            Text("Report")
+                                .font(Font.custom("Poppins-Light", size: 10))
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .padding([.leading, .trailing], 16)
+                    
+                    HStack{
+                        Text("Recent Transaction")
+                            .font(Font.custom("Poppins-SemiBold", size: 18))
+                        
+                        Spacer()
+                        
+                        Text("View all")
+                            .font(Font.custom("Poppins-SemiBold", size: 12))
+                            .foregroundColor(Color("Secondary"))
+                    }
+                    .padding(.top,40)
+                    .padding([.leading, .trailing], 16)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8){
+                            ForEach(scroll_tabs, id: \.self){tab in
+                                TabButton(title: tab, selectedTab: $selectedTab, animation: animation)
+                            }
+                        }
+                    }
+                    .padding([.leading, .trailing],10)
+                    
                     ScrollView{
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text("Available Cash")
-                                    .font(Font.custom("Poppins-Light", size: 13))
-                                    .foregroundColor(.black)
-                                
-                                Text("Rp 10.000.000")
-                                    .font(Font.custom("Poppins-SemiBold", size: 22))
-                                    .foregroundColor(.black)
-                            }
-                            
-                            Spacer(minLength: 0)
-                            
-                            VStack{
-                                HStack(alignment: .center){
-                                    Image("wallet")
-                                        .resizable()
-                                        .frame(width: 21, height: 18)
-                                }
-                                .padding(7)
-                                .background(Color("Secondary"))
-                                .cornerRadius(13)
-                                
-                                Text("Wallet")
-                                    .font(Font.custom("Poppins-Light", size: 10))
-                                    .foregroundColor(.black)
-                            }
-                            
-                            VStack{
-                                HStack(alignment: .center){
-                                    Image("bar-chart-2")
-                                        .resizable()
-                                        .frame(width: 21, height: 18)
-                                }
-                                .padding(7)
-                                .background(Color("Secondary"))
-                                .cornerRadius(13)
-                                
-                                Text("Budget")
-                                    .font(Font.custom("Poppins-Light", size: 10))
-                                    .foregroundColor(.black)
-                            }
-                            
-                            VStack{
-                                HStack(alignment: .center){
-                                    Image("trending-up")
-                                        .resizable()
-                                        .frame(width: 21, height: 18)
-                                }
-                                .padding(7)
-                                .background(Color("Secondary"))
-                                .cornerRadius(13)
-                                
-                                Text("Report")
-                                    .font(Font.custom("Poppins-Light", size: 10))
-                                    .foregroundColor(.black)
-                            }
-                        }
-                        .padding([.leading, .trailing], 16)
-                        
-                        HStack{
-                            Text("Recent Transaction")
-                                .font(Font.custom("Poppins-SemiBold", size: 18))
-                            
-                            Spacer()
-                            
-                            Text("View all")
-                                .font(Font.custom("Poppins-SemiBold", size: 12))
-                                .foregroundColor(Color("Secondary"))
-                        }
-                        .padding(.top,40)
-                        .padding([.leading, .trailing], 16)
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 8){
-                                ForEach(scroll_tabs, id: \.self){tab in
-                                    TabButton(title: tab, selectedTab: $selectedTab, animation: animation)
-                                }
-                            }
-                        }
-                        .padding([.leading, .trailing],10)
-                        
                         VStack(alignment: .leading){
                             
                             HStack{
@@ -413,15 +413,32 @@ struct HomeView: View {
                 }
             }
             
-            Image(systemName: "plus")
-                .padding(16.8)
-                .font(.title)
-                .background(Color("Secondary"))
-                .foregroundColor(.white)
-                .clipShape(Circle())
+            FloatingButtonView()
                 .padding(.trailing, 25)
                 .padding(.bottom, 30)
+                
+            
+//            Image(systemName: "plus")
+//                .padding(16.8)
+//                .font(.title)
+//                .background(Color("Secondary"))
+//                .foregroundColor(.white)
+//                .clipShape(Circle())
+//                .padding(.trailing, 25)
+//                .padding(.bottom, 30)
         }
         .navigationBarHidden(true)
     }
 }
+
+struct ModelUser: Identifiable{
+    var id = UUID().uuidString
+    var nama: String
+    var email: String
+    var password: String
+    var photo: String
+}
+
+var UserMS = [
+    ModelUser(nama: "Rizal", email: "rijal@gmail.com", password: "rijalasoy", photo: "rijal")
+]
