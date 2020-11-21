@@ -41,14 +41,16 @@ struct WelcomePage: View {
                 .padding(.trailing,10)
                 
                 VStack(alignment: .center){
-                    Text("Login")
-                        .font(Font.custom("Poppins-Bold", size: 14))
-                        .foregroundColor(.black)
-                        .padding([.top,.bottom],14)
-                        .padding([.leading,.trailing],23)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                        .shadow(color: Color("darkShadow"), radius: 4, x: 1, y: 2)
+                    NavigationLink(destination: HomeView()) {
+                        Text("Login")
+                            .font(Font.custom("Poppins-Bold", size: 14))
+                            .foregroundColor(.black)
+                            .padding([.top,.bottom],14)
+                            .padding([.leading,.trailing],23)
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(color: Color("darkShadow"), radius: 4, x: 1, y: 2)
+                    }.navigationBarHidden(true)
                 }
             }
             .padding(.top,34)
