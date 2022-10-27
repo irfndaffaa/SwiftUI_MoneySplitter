@@ -13,12 +13,12 @@ struct WelcomePage: View {
         VStack{
             Image("welcomeImg")
                 .resizable()
-                .frame(width: 295, height: 267)
-                .padding(.top,60)
+                .frame(width: 265, height: 235)
+                .padding(.top,50)
             
             Text("Welcome")
                 .font(Font.custom("Poppins-Bold", size: 28))
-                .padding(.top,25)
+                .padding(.top,20)
             
             Text("Let's get started to manage your finance and have a better lifestyle")
                 .font(Font.custom("Poppins-Light", size: 13))
@@ -59,7 +59,7 @@ struct WelcomePage: View {
                     .navigationBarHidden(true)
                 }
             }
-            .padding(.top,34)
+            .padding(.top,25)
             
             HStack{
                 Rectangle()
@@ -75,7 +75,7 @@ struct WelcomePage: View {
                     .frame(width: 70, height: 1)
             }
             .padding(.top, 20)
-            .padding([.leading, .trailing], 56)
+            .padding([.leading, .trailing], 45)
             
             HStack{
                 Image("Google")
@@ -87,8 +87,9 @@ struct WelcomePage: View {
                     .resizable()
                     .frame(width: 35.26, height: 36)
             }
-            .padding(.top,30)
+            .padding(.top,25)
             .padding(.bottom, 40)
         }
+        .frame(width: UIScreen.main.bounds.width-30, alignment: .center)
     }
 }
